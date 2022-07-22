@@ -20,7 +20,7 @@ class App extends React.Component {
 
   onInputChange = ({ target }) => {
     const { name, value } = target;
-    this.setState({ [name]: value }, 
+    this.setState({ [name]: value },
       () => this.loginConditions());
   }
 
@@ -28,9 +28,9 @@ class App extends React.Component {
     const {
       loginName,
     } = this.state;
-    
-    if (loginName.length >= 3)
-    {
+    const minLength = 3;
+
+    if (loginName.length >= minLength) {
       this.setState({ loginButtonDisabled: false });
     } else {
       this.setState({ loginButtonDisabled: true });
@@ -38,33 +38,42 @@ class App extends React.Component {
   }
 
   onLoginClick = () => {
-    
+
   }
 
   render() {
-
-    const { loginButtonDisabled, loginName } = this.state
+    const { loginButtonDisabled, loginName } = this.state;
 
     return (
-    <>
-      <p>TrybeTunes</p>
-      <Switch>
-      <Route exact path='/' render=
-      { () => <Login 
-      onInputChange={ this.onInputChange } 
-      onLoginClick={ this.onLoginClick}
-      loginName= { loginName } 
-      loginButtonDisabled= { loginButtonDisabled }
-       />}/>;
-       
-      <Route exact path='/Album/:id' component={ Album }/>;
-      <Route exact path='/Favorites' component={ Favorites }/>;
-      <Route exact path='/Profile' component={ Profile }/>;
-      <Route exact path='/Profile/edit' component={ ProfileEdit }/>;
-      <Route exact path='/Search' component={ Search }/>;
-      <Route path= "/*" component={ NotFound }/>;
-      </Switch>
-    </>)
+      <>
+        <p>TrybeTunes</p>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={ () => (<Login
+              onInputChange={ this.onInputChange }
+              onLoginClick={ this.onLoginClick }
+              loginName={ loginName }
+              loginButtonDisabled={ loginButtonDisabled }
+            />) }
+          />
+          ;
+
+          <Route exact path="/Album/:id" component={ Album } />
+          ;
+          <Route exact path="/Favorites" component={ Favorites } />
+          ;
+          <Route exact path="/Profile" component={ Profile } />
+          ;
+          <Route exact path="/Profile/edit" component={ ProfileEdit } />
+          ;
+          <Route exact path="/Search" component={ Search } />
+          ;
+          <Route path="/*" component={ NotFound } />
+          ;
+        </Switch>
+      </>);
   }
 }
 
