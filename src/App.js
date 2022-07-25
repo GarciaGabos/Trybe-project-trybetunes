@@ -9,41 +9,7 @@ import ProfileEdit from './pages/ProfileEdit';
 import Search from './pages/Search';
 
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      loginButtonDisabled: true,
-      loginName: '',
-    };
-  }
-
-  onInputChange = ({ target }) => {
-    const { name, value } = target;
-    this.setState({ [name]: value },
-      () => this.loginConditions());
-  }
-
-  loginConditions = () => {
-    const {
-      loginName,
-    } = this.state;
-    const minLength = 3;
-
-    if (loginName.length >= minLength) {
-      this.setState({ loginButtonDisabled: false });
-    } else {
-      this.setState({ loginButtonDisabled: true });
-    }
-  }
-
-  onLoginClick = () => {
-
-  }
-
   render() {
-    const { loginButtonDisabled, loginName } = this.state;
-
     return (
       <>
         <p>TrybeTunes</p>
@@ -51,12 +17,7 @@ class App extends React.Component {
           <Route
             exact
             path="/"
-            render={ () => (<Login
-              onInputChange={ this.onInputChange }
-              onLoginClick={ this.onLoginClick }
-              loginName={ loginName }
-              loginButtonDisabled={ loginButtonDisabled }
-            />) }
+            component={ Login }
           />
           ;
 
