@@ -12,11 +12,7 @@ class Header extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.showUser();
-  }
-
-  showUser = async () => {
+  componentDidMount = async () => {
     const user = await getUser();
     const { name } = user;
     this.setState({ userName: name, loading: false });
@@ -29,9 +25,9 @@ class Header extends React.Component {
         { loading
           ? (<Loading />)
           : (
-            <p data-testid="header-user-name">
+            <h1 data-testid="header-user-name">
               { userName }
-            </p>)}
+            </h1>)}
         <Link data-testid="link-to-search" to="/search"> Search </Link>
         <Link data-testid="link-to-favorites" to="/favorites"> Favorites </Link>
         <Link data-testid="link-to-profile" to="/profile"> Profile </Link>
