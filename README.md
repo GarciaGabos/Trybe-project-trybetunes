@@ -1,13 +1,17 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+## About
+&nbsp;&nbsp; This is a project developed during my studies at Trybe. In this project, I developed a music application. The user can search for artists listed on the 'iTunes API'. My goal was to develop a page based on the requirements given by 'Trybe'.
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+
+## Technologies:
+All technologies applied by me on this project:
+- React (with Redux and React Router)
+- Javascript;
+- CSS;
+- HTML;
+
+## How to run the project:
+- Git clone the repository;
+- Navigate to the folder and install the dependencies with `npm install`;
+- Done! Now you can start the application with `npm start`!
+
